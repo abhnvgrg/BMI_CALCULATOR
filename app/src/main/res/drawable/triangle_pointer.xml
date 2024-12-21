@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorWhite"/> <!-- Red color for the triangle -->
+    <path
+        android:fillColor="@color/colorWhite"
+        android:pathData="M 0,0 L 20,0 L 10,20 Z"/> <!-- Creates a simple triangle -->
+</shape>

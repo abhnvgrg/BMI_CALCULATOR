@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- White and Black -->
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <!-- Greys -->
+    <color name="colorGreyLight">#F5F5F5</color>
+    <color name="colorGreyMedium">#9E9E9E</color>
+    <color name="colorGreyDark">#616161</color>
+
+    <!-- Red Shades -->
+    <color name="colorRedLight">#FFCDD2</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorRedDark">#D32F2F</color>
+    <color name="red">#FF0000</color>
+
+    <!-- Blue Shades -->
+    <color name="colorBlueLight">#BBDEFB</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorBlueDark">#1976D2</color>
+    <color name="colorNavyBlue">#000080</color>
+    <color name="colorMidnightBlue">#272757</color>
+    <color name="light_blue">#ADD8E6</color>
+
+    <!-- Green Shades -->
+    <color name="colorGreenLight">#C8E6C9</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorGreenDark">#388E3C</color>
+    <color name="green">#32CD32</color>
+
+    <!-- Yellow Shades -->
+    <color name="colorYellowLight">#FFF9C4</color>
+    <color name="colorYellow">#FFEB3B</color>
+    <color name="colorYellowDark">#FBC02D</color>
+    <color name="yellow">#FFFF00</color>
+
+    <!-- Orange Shades -->
+    <color name="colorOrangeLight">#FFCCBC</color>
+    <color name="colorOrange">#FF9800</color>
+    <color name="colorOrangeDark">#F57C00</color>
+
+    <!-- Purple Shades -->
+    <color name="colorPurpleLight">#E1BEE7</color>
+    <color name="colorPurple">#9C27B0</color>
+    <color name="colorPurpleDark">#7B1FA2</color>
+    <color name="purple">#800080</color>
+
+    <!-- Brown Shades -->
+    <color name="colorBrownLight">#D7CCC8</color>
+    <color name="colorBrown">#795548</color>
+    <color name="colorBrownDark">#3E2723</color>
+
+    <!-- Pink Shades -->
+    <color name="colorPinkLight">#F8BBD0</color>
+    <color name="colorPink">#E91E63</color>
+    <color name="colorPinkDark">#C2185B</color>
+    <color name="colorMediumPink">#E94560</color>
+
+    <!-- Cyan Shades -->
+    <color name="colorCyanLight">#B2EBF2</color>
+    <color name="colorCyan">#00BCD4</color>
+    <color name="colorCyanDark">#0097A7</color>
+
+    <!-- Teal Shades -->
+    <color name="colorTealLight">#B2DFDB</color>
+    <color name="colorTeal">#009688</color>
+    <color name="colorTealDark">#00796B</color>
+
+
+    <color name="underweight_color">#ADD8E6</color> <!-- Light blue -->
+    <color name="healthy_color">#4CAF50</color> <!-- Green -->
+    <color name="overweight_color">#FFEB3B</color> <!-- Yellow -->
+    <color name="obese_color">#F44336</color> <!-- Red -->
+    <color name="extreme_obesity_color">#9C27B0</color> <!-- Purple -->
+</resources>
