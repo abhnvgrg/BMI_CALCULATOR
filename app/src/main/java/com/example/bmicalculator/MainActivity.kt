@@ -1,5 +1,7 @@
 package com.example.bmicalculator
 
+import android.animation.ValueAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -23,6 +25,51 @@ class MainActivity : AppCompatActivity() {
         val bmiProgressBar = findViewById<ProgressBar>(R.id.bmiProgressBar)
         val weightUnitSwitch = findViewById<SwitchMaterial>(R.id.weightUnitSwitch)
         val heightUnitSwitch = findViewById<SwitchMaterial>(R.id.heightUnitSwitch)
+        val shareButton = findViewById<AppCompatButton>(R.id.shareButton)
+
+        val heightslider = findViewById<Slider>(R.id.heightSlider)
+        val HeightsliderValueText = findViewById<TextView>(R.id.HeightsliderValueText)
+
+// Update TextView dynamically
+        heightslider.addOnChangeListener { _, value, _ ->
+            HeightsliderValueText.text = "${value.toFloat()}"
+        }
+
+        // Animate slider and update TextView
+        fun animateheightSliderWithValueDisplay(targetValue: Float) {
+            val animator = ValueAnimator.ofFloat(heightslider.value, targetValue)
+            animator.duration = 500
+            animator.addUpdateListener { animation ->
+                val animatedValue = animation.animatedValue as Float
+                heightslider.value = animatedValue
+                HeightsliderValueText.text = "${animatedValue.toFloat()}"
+            }
+            animator.start()
+        }
+
+        val weightslider = findViewById<Slider>(R.id.weightSlider)
+        val WeightsliderValueText = findViewById<TextView>(R.id.WeightsliderValueText)
+
+// Update TextView dynamically
+        weightslider.addOnChangeListener { _, value, _ ->
+            WeightsliderValueText.text = "${value.toFloat()}"
+        }
+
+        // Animate slider and update TextView
+        fun animateweightSliderWithValueDisplay(targetValue: Float) {
+            val animator = ValueAnimator.ofFloat(weightslider.value, targetValue)
+            animator.duration = 500
+            animator.addUpdateListener { animation ->
+                val animatedValue = animation.animatedValue as Float
+                weightslider.value = animatedValue
+                WeightsliderValueText.text = "${animatedValue.toFloat()}"
+            }
+            animator.start()
+        }
+
+
+
+
 
         calcButton.setOnClickListener {
             // Get user input
@@ -86,6 +133,31 @@ class MainActivity : AppCompatActivity() {
 
             // Update progress bar (normalize BMI display)
             bmiProgressBar.progress = bmi.toInt().coerceIn(0, 40)
+
+            // Add click listener for the share button
+            shareButton.setOnClickListener {
+                // Get BMI details to share
+                val bmiValue = answer.text.toString()
+                val bmiCategoryText = bmiCategory.text.toString()
+
+                // Create the share message
+                val shareMessage = """
+        Check out my BMI result!
+        BMI: $bmiValue
+        $bmiCategoryText
+        Calculated using the BMI Calculator app.
+    """.trimIndent()
+
+                // Create an Intent to share the message
+                val shareIntent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    type = "text/plain"
+                    putExtra(Intent.EXTRA_TEXT, shareMessage)
+                }
+
+                // Start the sharing activity
+                startActivity(Intent.createChooser(shareIntent, "Share your BMI result via"))
+            }
         }
     }
 }
