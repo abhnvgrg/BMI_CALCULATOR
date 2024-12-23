@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#272757"
+    android:background="@drawable/gradient_background"
     tools:context=".MainActivity">
 
     <!-- Title Text -->
@@ -50,7 +50,10 @@
         app:thumbColor="#14213d"
         app:thumbElevation="4dp"
         app:thumbRadius="20dp"
-        app:trackHeight="10dp" />
+        app:trackHeight="10dp"
+
+        />
+
 
 
     <!-- Progress Bar -->
@@ -149,6 +152,7 @@
         android:id="@+id/weightUnitSwitch"
         android:layout_width="49dp"
         android:layout_height="43dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -190,7 +194,9 @@
         android:layout_height="26dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weightUnitSwitch" />
+        app:layout_constraintTop_toBottomOf="@id/weightUnitSwitch"
+
+        />
 
     <!-- Calculate Button -->
 
@@ -225,7 +231,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:backgroundTint="#8ecae6"
+        android:backgroundTint="@color/colorBrownLight"
         android:text="Calculate BMI"
         android:textColor="@color/colorBlack"
         app:cornerRadius="26dp"
@@ -281,11 +287,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/shareButton"
-        android:layout_width="36dp"
-        android:layout_height="39dp"
+        android:layout_width="29dp"
+        android:layout_height="36dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#8ecae6"
+        android:backgroundTint="@color/colorBrownLight"
         app:cornerRadius="100dp"
         app:icon="@drawable/ic_share"
         app:iconGravity="top"
@@ -298,6 +304,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="-1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

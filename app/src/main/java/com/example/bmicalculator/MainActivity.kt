@@ -2,6 +2,7 @@ package com.example.bmicalculator
 
 import android.animation.ValueAnimator
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.colorBrown)
+        }
 
         // Find views
         val weightSlider = findViewById<Slider>(R.id.weightSlider)
@@ -27,9 +31,17 @@ class MainActivity : AppCompatActivity() {
         val heightUnitSwitch = findViewById<SwitchMaterial>(R.id.heightUnitSwitch)
         val shareButton = findViewById<AppCompatButton>(R.id.shareButton)
 
+
         val heightslider = findViewById<Slider>(R.id.heightSlider)
         val HeightsliderValueText = findViewById<TextView>(R.id.HeightsliderValueText)
 
+        val HeightUnitSwitch: SwitchMaterial = findViewById(R.id.heightUnitSwitch)
+        heightUnitSwitch.thumbTintList = ContextCompat.getColorStateList(this, R.color.colorBrownLight)
+        heightUnitSwitch.trackTintList = ContextCompat.getColorStateList(this, R.color.switch_track_color)
+
+        val WeightUnitSwitch: SwitchMaterial = findViewById(R.id.weightUnitSwitch)
+        weightUnitSwitch.thumbTintList = ContextCompat.getColorStateList(this, R.color.colorBrownLight)
+        weightUnitSwitch.trackTintList = ContextCompat.getColorStateList(this, R.color.switch_track_color)
 // Update TextView dynamically
         heightslider.addOnChangeListener { _, value, _ ->
             HeightsliderValueText.text = "${value.toFloat()}"
@@ -146,6 +158,7 @@ class MainActivity : AppCompatActivity() {
         BMI: $bmiValue
         $bmiCategoryText
         Calculated using the BMI Calculator app.
+        LET'S GO FIT!!
     """.trimIndent()
 
                 // Create an Intent to share the message
