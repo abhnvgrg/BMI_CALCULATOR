@@ -55,7 +55,6 @@
         />
 
 
-
     <!-- Progress Bar -->
 
     <TextView
@@ -269,21 +268,24 @@
         app:layout_constraintTop_toBottomOf="@id/answer" />
 
     <!-- Graphical Representation (Progress Bar with Shadow) -->
+
+
+    <!-- Adjust the margin for positioning -->
+
+
     <ProgressBar
         android:id="@+id/bmiProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#14213d"
         android:max="40"
         android:progress="0"
         android:progressDrawable="@drawable/custom_progress"
-        android:progressTint="#8ecae6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bmiCategory" />
+        app:layout_constraintTop_toBottomOf="@id/bmiCategory"
+        tools:layout_editor_absoluteX="25dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/shareButton"
